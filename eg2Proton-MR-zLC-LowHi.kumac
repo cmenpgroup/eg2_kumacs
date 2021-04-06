@@ -1,0 +1,32 @@
+tree/file 10 ../clas6_groovy/run_42011_protonNtuple.hipo protonTree::tree
+
+canvas/zone 2 1
+canvas/set ts 20
+canvas/set ats 20
+canvas/set als 20
+
+histogram/create 300 15 0.0 0.5
+tree/draw 10 zLC pFidCut==1&&eFidCut==1&&iTgt==0 -1 300
+
+histogram/create 301 15 0.0 0.5
+tree/draw 10 zLC pFidCut==1&&eFidCut==1&&iTgt==1 -1 301
+
+histogram/create 310 15 0.5 1.0
+tree/draw 10 zLC pFidCut==1&&eFidCut==1&&iTgt==0 -1 310
+
+histogram/create 311 15 0.5 1.0
+tree/draw 10 zLC pFidCut==1&&eFidCut==1&&iTgt==1 -1 311
+
+canvas/cd 0
+histogram/divide 302 301 300
+histogram/graph 302 303
+graph/title 303 eg2:C/D_2 z_L_C R_p
+graph/plot 303
+
+canvas/cd 1
+histogram/divide 312 311 310
+histogram/graph 312 313
+graph/title 313 eg2:C/D_2 z_L_C R_p
+graph/plot 313
+
+canvas/save eg2Proton-MR-zLC-LowHi.png

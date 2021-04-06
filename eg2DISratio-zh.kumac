@@ -1,0 +1,19 @@
+vector/read nsolid ../eg2_proton_analysis/eg2DIS-solid-hi.txt 0
+vector/read nliquid ../eg2_proton_analysis/eg2DIS-liquid-hi.txt 0
+
+histogram/create 400 20 0.5 1.0
+vector/fill nliquid ! 400
+histogram/create 410 20 0.5 1.0
+vector/fill nsolid ! 410
+
+canvas/set ts 24
+canvas/set ats 20
+canvas/set als 20
+
+canvas/cd 0
+histogram/divide 420 410 400
+histogram/graph 420 430
+graph/title 430 eg2:C/D_2 z_h N_e(A)/N_e(D_2)
+graph/plot 430
+
+canvas/save eg2DISratio-zh.png

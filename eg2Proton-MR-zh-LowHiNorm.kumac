@@ -1,0 +1,63 @@
+tree/file 10 ../clas6_groovy/run_42011_protonNtuple.hipo protonTree::tree
+
+canvas/zone 2 2
+canvas/set ts 20
+canvas/set ats 20
+canvas/set als 20
+
+histogram/create 300 20 0.0 0.5
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&iTgt==0 -1 300
+
+histogram/create 301 20 0.0 0.5
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&iTgt==1 -1 301
+
+histogram/create 310 20 0.5 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&iTgt==0 -1 310
+
+histogram/create 311 20 0.5 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&iTgt==1 -1 311
+
+histogram/divide 302 301 300
+histogram/graph 302 303
+graph/title 303 eg2:C/D_2 z_h R_p
+
+histogram/divide 312 311 310
+histogram/graph 312 313
+graph/title 313 eg2:C/D_2 z_h R_p
+
+vector/read nsolid-lo ../eg2_proton_analysis/eg2DIS-solid-lo.txt 0
+vector/read nliquid-lo ../eg2_proton_analysis/eg2DIS-liquid-lo.txt 0
+
+histogram/create 400 20 0.0 0.5
+vector/fill nliquid-lo ! 400
+histogram/create 401 20 0.0 0.5
+vector/fill nsolid-lo ! 401
+
+histogram/divide 402 401 400
+histogram/divide 304 302 402
+histogram/graph 304 305
+graph/title 305 eg2:C/D_2 z_h R_p
+
+vector/read nsolid-hi ../eg2_proton_analysis/eg2DIS-solid-hi.txt 0
+vector/read nliquid-hi ../eg2_proton_analysis/eg2DIS-liquid-hi.txt 0
+
+histogram/create 410 20 0.5 1.0
+vector/fill nliquid-hi ! 410
+histogram/create 411 20 0.5 1.0
+vector/fill nsolid-hi ! 411
+
+histogram/divide 412 411 410
+histogram/divide 314 312 412
+histogram/graph 314 315
+graph/title 315 eg2:C/D_2 z_h R_p
+
+canvas/cd 0
+graph/plot 303
+canvas/cd 1
+graph/plot 313
+canvas/cd 2
+graph/plot 305
+canvas/cd 3
+graph/plot 315
+
+canvas/save eg2Proton-MR-zh-LowHiNorm.png

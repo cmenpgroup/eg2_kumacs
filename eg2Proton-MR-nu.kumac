@@ -1,0 +1,19 @@
+tree/file 10 ../clas6_groovy/run_42011_protonNtuple.hipo protonTree::tree
+
+canvas/set ts 24
+canvas/set ats 24
+canvas/set als 24
+
+histogram/create 300 50 2.2 4.2
+tree/draw 10 nu pFidCut==1&&eFidCut==1&&iTgt==0 -1 300
+
+histogram/create 310 50 2.2 4.2
+tree/draw 10 nu pFidCut==1&&eFidCut==1&&iTgt==1 -1 310
+
+canvas/cd 0
+histogram/divide 320 310 300
+histogram/graph 320 330
+graph/title 330 eg2:C/D_2 #nu~(GeV) R_p
+graph/plot 330
+
+canvas/save eg2Proton-MR-nu.png

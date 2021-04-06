@@ -1,0 +1,24 @@
+tree/file 10 run_42011_protonNtuple.hipo protonTree::tree
+
+canvas/zone 3 1
+canvas/set ts 24
+canvas/set ats 24
+canvas/set als 24
+
+canvas/cd 0
+histogram/create 300 50 1.0 4.1
+histogram/title 300 eg2:D_2 Q^2~(GeV^2) Counts
+histogram/set 300 fc 35
+tree/draw 10 q2 pFidCut==1&&eFidCut==1&&iTgt==0 -1 300
+
+canvas/cd 1
+histogram/create 310 50 1.0 4.1
+histogram/title 310 eg2:C Q^2~(GeV^2) Counts
+histogram/set 310 fc 34
+tree/draw 10 q2 pFidCut==1&&eFidCut==1&&iTgt==1 -1 310
+
+canvas/cd 2
+histogram/divide 320 310 300
+histogram/graph 320 330
+graph/title 330 eg2:C/D_2 Q^2~(GeV^2) R_p
+graph/plot 330

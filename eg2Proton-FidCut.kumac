@@ -1,0 +1,38 @@
+tree/file 10 ../clas6_groovy/run_42011_protonNtuple.hipo protonTree::tree
+
+canvas/zone 3 2
+canvas/set ts 24
+canvas/set ats 24
+canvas/set als 24
+
+canvas/cd 0
+histogram/create2d 200 360 -180.0 180.0 100 0.0 100.0
+histogram/title 200 eg2:Proton #phi~(deg.) #theta~(deg.)
+tree/draw 10 pTheta%pPhi ! -1 200
+
+canvas/cd 1
+histogram/create2d 210 360 -180.0 180.0 100 0.0 100.0
+histogram/title 210 eg2:Proton #phi~(deg.) #theta~(deg.)
+tree/draw 10 pTheta%pPhi pFidCut==1 -1 210
+
+canvas/cd 2
+histogram/create2d 215 360 -180.0 180.0 100 0.0 100.0
+histogram/title 215 eg2:Proton #phi~(deg.) #theta~(deg.)
+tree/draw 10 pTheta%pPhi pFidCut==0 -1 215
+
+canvas/cd 3
+histogram/create2d 220 360 -180.0 180.0 60 0.0 60.0
+histogram/title 220 eg2:Electron #phi~(deg.) #theta~(deg.)
+tree/draw 10 eTheta%ePhi ! -1 220
+
+canvas/cd 4
+histogram/create2d 230 360 -180.0 180.0 60 0.0 60.0
+histogram/title 230 eg2:Electron #phi~(deg.) #theta~(deg.)
+tree/draw 10 eTheta%ePhi eFidCut==1 -1 230
+
+canvas/cd 5
+histogram/create2d 235 360 -180.0 180.0 60 0.0 60.0
+histogram/title 235 eg2:Electron #phi~(deg.) #theta~(deg.)
+tree/draw 10 eTheta%ePhi eFidCut==0 -1 235
+
+canvas/save eg2Proton-FidCut.png
