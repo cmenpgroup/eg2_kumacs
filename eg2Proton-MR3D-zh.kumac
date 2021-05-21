@@ -1,0 +1,151 @@
+canvas/zone 3 1
+canvas/set ts 24
+canvas/set ats 24
+canvas/set als 24
+
+tree/file 10 /Users/wood5/jlab/clas-data/eg2/Npos/Carbon/ntuples/ntuple_C_Npos.hipo protonTree::tree
+
+histogram/create 100 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.0&&q2<1.33&&nu>2.2&&nu<3.2&&iTgt==0 -1 100
+histogram/create 101 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.0&&q2<1.33&&nu>2.2&&nu<3.2&&iTgt==1 -1 101
+histogram/divide 102 101 100
+
+histogram/create 120 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.0&&q2<1.33&&nu>3.2&&nu<3.73&&iTgt==0 -1 120
+histogram/create 121 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.0&&q2<1.33&&nu>3.2&&nu<3.73&&iTgt==1 -1 121
+histogram/divide 122 121 120
+
+histogram/create 130 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.0&&q2<1.33&&nu>3.73&&nu<4.25&&iTgt==0 -1 130
+histogram/create 131 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.0&&q2<1.33&&nu>3.73&&nu<4.25&&iTgt==1 -1 131
+histogram/divide 132 131 130
+
+histogram/create 140 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.33&&q2<1.76&&nu>2.2&&nu<3.2&&iTgt==0 -1 140
+histogram/create 141 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.33&&q2<1.76&&nu>2.2&&nu<3.2&&iTgt==1 -1 141
+histogram/divide 142 141 140
+
+histogram/create 150 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.33&&q2<1.76&&nu>3.2&&nu<3.73&&iTgt==0 -1 150
+histogram/create 151 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.33&&q2<1.76&&nu>3.2&&nu<3.73&&iTgt==1 -1 151
+histogram/divide 152 151 150
+
+histogram/create 160 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.33&&q2<1.76&&nu>3.73&&nu<4.25&&iTgt==0 -1 160
+histogram/create 161 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.33&&q2<1.76&&nu>3.73&&nu<4.25&&iTgt==1 -1 161
+histogram/divide 162 161 160
+
+histogram/create 170 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.76&&q2<4.10&&nu>2.2&&nu<3.2&&iTgt==0 -1 170
+histogram/create 171 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.76&&q2<4.10&&nu>2.2&&nu<3.2&&iTgt==1 -1 171
+histogram/divide 172 171 170
+
+histogram/create 180 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.76&&q2<4.10&&nu>3.2&&nu<3.73&&iTgt==0 -1 180
+histogram/create 181 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.76&&q2<4.10&&nu>3.2&&nu<3.73&&iTgt==1 -1 181
+histogram/divide 182 181 180
+
+histogram/create 190 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.76&&q2<4.10&&nu>3.73&&nu<4.25&&iTgt==0 -1 190
+histogram/create 191 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.76&&q2<4.10&&nu>3.73&&nu<4.25&&iTgt==1 -1 191
+histogram/divide 192 191 190
+
+vector/read nsolid-C ../eg2DIS_Create/eg2DIS-solid-C.txt 0
+vector/read nliquid-C ../eg2DIS_Create/eg2DIS-liquid-C.txt 0
+histogram/create 110 40 0.0 1.0
+vector/fill nliquid-C ! 110
+histogram/create 111 40 0.0 1.0
+vector/fill nsolid-C ! 111
+histogram/divide 112 111 110
+
+histogram/divide 103 102 112
+histogram/graph 103 104
+graph/title 104 CLAS6:eg2 z_h R^p
+
+histogram/divide 123 122 112
+histogram/graph 123 124
+graph/title 124 CLAS6:eg2 z_h R^p
+
+histogram/divide 133 132 112
+histogram/graph 133 134
+graph/title 134 CLAS6:eg2 z_h R^p
+
+canvas/cd 0
+graph/set 104 mstyle=0
+graph/set 104 mcolor=1
+graph/set 104 msize=5
+graph/plot 104
+canvas/cd 0
+graph/set 124 mstyle=1
+graph/set 124 mcolor=2
+graph/set 124 msize=5
+graph/plot 124 same
+graph/set 134 mstyle=2
+graph/set 134 mcolor=3
+graph/set 134 msize=5
+graph/plot 134 same
+
+histogram/divide 143 142 112
+histogram/graph 143 144
+graph/title 144 CLAS6:eg2 z_h R^p
+
+histogram/divide 153 152 112
+histogram/graph 153 154
+graph/title 154 CLAS6:eg2 z_h R^p
+
+histogram/divide 163 162 112
+histogram/graph 163 164
+graph/title 164 CLAS6:eg2 z_h R^p
+
+canvas/cd 1
+graph/set 144 mstyle=0
+graph/set 144 mcolor=1
+graph/set 144 msize=5
+graph/plot 144
+canvas/cd 1
+graph/set 154 mstyle=1
+graph/set 154 mcolor=2
+graph/set 154 msize=5
+graph/plot 154 same
+graph/set 164 mstyle=2
+graph/set 164 mcolor=3
+graph/set 164 msize=5
+graph/plot 164 same
+
+histogram/divide 173 172 112
+histogram/graph 173 174
+graph/title 174 CLAS6:eg2 z_h R^p
+
+histogram/divide 183 182 112
+histogram/graph 183 184
+graph/title 184 CLAS6:eg2 z_h R^p
+
+histogram/divide 193 192 112
+histogram/graph 193 194
+graph/title 194 CLAS6:eg2 z_h R^p
+
+canvas/cd 2
+graph/set 174 mstyle=0
+graph/set 174 mcolor=1
+graph/set 174 msize=5
+graph/plot 174
+canvas/cd 2
+graph/set 184 mstyle=1
+graph/set 184 mcolor=2
+graph/set 184 msize=5
+graph/plot 184 same
+graph/set 194 mstyle=2
+graph/set 194 mcolor=3
+graph/set 194 msize=5
+graph/plot 194 same
+
+canvas/save eg2Proton-MR3D-zh.png
