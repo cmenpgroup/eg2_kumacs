@@ -5,9 +5,9 @@ canvas/set als 20
 
 tree/file 10 /Users/wood5/jlab/clas-data/eg2/Npos/Carbon/ntuples/ntuple_C_Npos.hipo protonTree::tree
 histogram/create 100 40 0.0 1.0
-tree/draw 10 zh pFidCut==1&&eFidCut==1&&iTgt==0 -1 100
+tree/draw 10 zLC pFidCut==1&&eFidCut==1&&iTgt==0 -1 100
 histogram/create 101 40 0.0 1.0
-tree/draw 10 zh pFidCut==1&&eFidCut==1&&iTgt==1 -1 101
+tree/draw 10 zLC pFidCut==1&&eFidCut==1&&iTgt==1 -1 101
 histogram/divide 102 101 100
 
 vector/read nsolid-C ../eg2DIS_Create/eg2DIS-solid-C.txt 0
@@ -20,13 +20,13 @@ vector/fill nsolid-C ! 111
 histogram/divide 112 111 110
 histogram/divide 103 102 112
 histogram/graph 103 104
-graph/title 104 CLAS6:eg2 z_h R^p
+graph/title 104 CLAS6:eg2 z_L_C R^p
 
 tree/file 20 /Users/wood5/jlab/clas-data/eg2/Npos/Iron/ntuples/ntuple_Fe_Npos.hipo protonTree::tree
 histogram/create 200 40 0.0 1.0
-tree/draw 20 zh pFidCut==1&&eFidCut==1&&iTgt==0 -1 200
+tree/draw 20 zLC pFidCut==1&&eFidCut==1&&iTgt==0 -1 200
 histogram/create 201 40 0.0 1.0
-tree/draw 20 zh pFidCut==1&&eFidCut==1&&iTgt==1 -1 201
+tree/draw 20 zLC pFidCut==1&&eFidCut==1&&iTgt==1 -1 201
 histogram/divide 202 201 200
 
 vector/read nsolid-Fe ../eg2DIS_Create/eg2DIS-solid-Fe.txt 0
@@ -39,13 +39,13 @@ vector/fill nsolid-Fe ! 211
 histogram/divide 212 211 210
 histogram/divide 203 202 212
 histogram/graph 203 204
-graph/title 204 CLAS6:eg2 z_h R^p
+graph/title 204 CLAS6:eg2 z_L_C R^p
 
 tree/file 30 /Users/wood5/jlab/clas-data/eg2/Npos/Lead/ntuples/ntuple_Pb_Npos.hipo protonTree::tree
 histogram/create 300 40 0.0 1.0
-tree/draw 30 zh pFidCut==1&&eFidCut==1&&iTgt==0 -1 300
+tree/draw 30 zLC pFidCut==1&&eFidCut==1&&iTgt==0 -1 300
 histogram/create 301 40 0.0 1.0
-tree/draw 30 zh pFidCut==1&&eFidCut==1&&iTgt==1 -1 301
+tree/draw 30 zLC pFidCut==1&&eFidCut==1&&iTgt==1 -1 301
 histogram/divide 302 301 300
 
 vector/read nsolid-Pb ../eg2DIS_Create/eg2DIS-solid-Pb.txt 0
@@ -58,11 +58,7 @@ vector/fill nsolid-Pb ! 311
 histogram/divide 312 311 310
 histogram/divide 303 302 312
 histogram/graph 303 304
-graph/title 304 CLAS6:eg2 z_h R^p
-
-graph/read 430 ../eg2_proton_theory/eg2Proton-GiBUU-MR-zh-C.txt
-graph/read 440 ../eg2_proton_theory/eg2Proton-GiBUU-MR-zh-Fe.txt
-graph/read 450 ../eg2_proton_theory/eg2Proton-GiBUU-MR-zh-Pb.txt
+graph/title 304 CLAS6:eg2 z_L_C R^p
 
 canvas/cd 0
 graph/set 104 mstyle=0
@@ -80,17 +76,4 @@ graph/set 304 mcolor=3
 graph/set 304 msize=5
 graph/plot 304 same
 
-graph/set 430 mcolor=1
-graph/set 430 msize=0
-graph/set 430 lcolor=1
-graph/plot 430 sameL
-graph/set 440 mcolor=2
-graph/set 440 msize=0
-graph/set 440 lcolor=2
-graph/plot 440 sameL
-graph/set 450 mcolor=3
-graph/set 450 msize=0
-graph/set 450 lcolor=3
-graph/plot 450 sameL
-
-canvas/save eg2Proton-MR-zh-AllTgt.png
+canvas/save eg2Proton-MR-zLC-AllTgt.png

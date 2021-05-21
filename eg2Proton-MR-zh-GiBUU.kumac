@@ -1,12 +1,12 @@
-tree/file 10 ../clas6_groovy/run_42011_protonNtuple.hipo protonTree::tree
+tree/file 10 ../clas6_groovy/ntuple_C_Npos.hipo protonTree::tree
 
 canvas/set ts 24
 canvas/set ats 20
 canvas/set als 20
 
-graph/read 430 ../eg2_proton_analysis/eg2Proton-GiBUU-MR-zh-C.txt
-graph/read 440 ../eg2_proton_analysis/eg2Proton-GiBUU-MR-zh-Fe.txt
-graph/read 450 ../eg2_proton_analysis/eg2Proton-GiBUU-MR-zh-Pb.txt
+graph/read 430 ../eg2_proton_theory/eg2Proton-GiBUU-MR-zh-C.txt
+graph/read 440 ../eg2_proton_theory/eg2Proton-GiBUU-MR-zh-Fe.txt
+graph/read 450 ../eg2_proton_theory/eg2Proton-GiBUU-MR-zh-Pb.txt
 
 histogram/create 300 40 0.0 1.0
 tree/draw 10 zh pFidCut==1&&eFidCut==1&&iTgt==0 -1 300
@@ -17,9 +17,21 @@ tree/draw 10 zh pFidCut==1&&eFidCut==1&&iTgt==1 -1 310
 histogram/divide 320 310 300
 histogram/graph 320 330
 graph/title 330 eg2:C/D_2 z_h R_p
+//graph/set 330 mstyle=0
+//graph/set 330 mcolor=1
+//graph/set 330 msize=5
 graph/plot 330
-graph/plot 430 same
-graph/plot 440 same
-graph/plot 450 same
+graph/set 430 mcolor=2
+graph/set 430 msize=0
+graph/set 430 lcolor=2
+graph/plot 430 sameL
+graph/set 440 mcolor=3
+graph/set 440 msize=0
+graph/set 440 lcolor=3
+graph/plot 440 sameL
+graph/set 450 mcolor=4
+graph/set 450 msize=0
+graph/set 450 lcolor=4
+graph/plot 450 sameL
 
 canvas/save eg2Proton-MR-zh-GiBuu.png
