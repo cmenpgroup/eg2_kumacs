@@ -1,0 +1,196 @@
+canvas/zone 3 1
+canvas/set ts 24
+canvas/set ats 24
+canvas/set als 24
+
+vector/read nliquid ../eg2DIS_Create/MR3D/eg2DIS-liquid.txt 0
+histogram/create 110 40 0.0 1.0
+vector/fill nliquid ! 110
+
+tree/file 10 /Users/wood5/jlab/clas-data/eg2/Npos/Carbon/ntuples/ntuple_C_Npos.hipo protonTree::tree
+
+histogram/create 120 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.0&&q2<1.33&&nu>3.2&&nu<3.73&&iTgt==0 -1 120
+histogram/create 121 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.0&&q2<1.33&&nu>3.2&&nu<3.73&&iTgt==1 -1 121
+histogram/divide 122 121 120
+
+vector/read nsolid-C_2_1 ../eg2DIS_Create/MR3D/eg2DIS-solid-C_nu_2_q2_1.txt 0
+histogram/create 502 40 0.0 1.0
+vector/fill nsolid-C_2_1 ! 502
+histogram/divide 512 502 110
+
+histogram/create 150 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.33&&q2<1.76&&nu>3.2&&nu<3.73&&iTgt==0 -1 150
+histogram/create 151 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.33&&q2<1.76&&nu>3.2&&nu<3.73&&iTgt==1 -1 151
+histogram/divide 152 151 150
+
+vector/read nsolid-C_2_2 ../eg2DIS_Create/MR3D/eg2DIS-solid-C_nu_2_q2_2.txt 0
+histogram/create 505 40 0.0 1.0
+vector/fill nsolid-C_2_2 ! 505
+histogram/divide 515 505 110
+
+histogram/create 180 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.76&&q2<4.10&&nu>3.2&&nu<3.73&&iTgt==0 -1 180
+histogram/create 181 40 0.0 1.0
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&q2>1.76&&q2<4.10&&nu>3.2&&nu<3.73&&iTgt==1 -1 181
+histogram/divide 182 181 180
+
+vector/read nsolid-C_2_3 ../eg2DIS_Create/MR3D/eg2DIS-solid-C_nu_2_q2_3.txt 0
+histogram/create 508 40 0.0 1.0
+vector/fill nsolid-C_2_3 ! 508
+histogram/divide 518 508 110
+
+histogram/divide 123 122 512
+histogram/graph 123 124
+graph/title 124 CLAS6:eg2 z_h R^p
+
+histogram/divide 153 152 515
+histogram/graph 153 154
+graph/title 154 CLAS6:eg2 z_h R^p
+
+histogram/divide 183 182 518
+histogram/graph 183 184
+graph/title 184 CLAS6:eg2 z_h R^p
+
+tree/file 20 /Users/wood5/jlab/clas-data/eg2/Npos/Iron/ntuples/ntuple_Fe_Npos.hipo protonTree::tree
+
+histogram/create 220 40 0.0 1.0
+tree/draw 20 zh pFidCut==1&&eFidCut==1&&q2>1.0&&q2<1.33&&nu>3.2&&nu<3.73&&iTgt==0 -1 220
+histogram/create 221 40 0.0 1.0
+tree/draw 20 zh pFidCut==1&&eFidCut==1&&q2>1.0&&q2<1.33&&nu>3.2&&nu<3.73&&iTgt==1 -1 221
+histogram/divide 222 221 220
+
+vector/read nsolid-Fe_2_1 ../eg2DIS_Create/MR3D/eg2DIS-solid-Fe_nu_2_q2_1.txt 0
+histogram/create 602 40 0.0 1.0
+vector/fill nsolid-Fe_2_1 ! 602
+histogram/divide 612 602 110
+
+histogram/create 250 40 0.0 1.0
+tree/draw 20 zh pFidCut==1&&eFidCut==1&&q2>1.33&&q2<1.76&&nu>3.2&&nu<3.73&&iTgt==0 -1 250
+histogram/create 251 40 0.0 1.0
+tree/draw 20 zh pFidCut==1&&eFidCut==1&&q2>1.33&&q2<1.76&&nu>3.2&&nu<3.73&&iTgt==1 -1 251
+histogram/divide 252 251 250
+
+vector/read nsolid-Fe_2_2 ../eg2DIS_Create/MR3D/eg2DIS-solid-Fe_nu_2_q2_2.txt 0
+histogram/create 605 40 0.0 1.0
+vector/fill nsolid-Fe_2_2 ! 605
+histogram/divide 615 605 110
+
+histogram/create 280 40 0.0 1.0
+tree/draw 20 zh pFidCut==1&&eFidCut==1&&q2>1.76&&q2<4.10&&nu>3.2&&nu<3.73&&iTgt==0 -1 280
+histogram/create 281 40 0.0 1.0
+tree/draw 20 zh pFidCut==1&&eFidCut==1&&q2>1.76&&q2<4.10&&nu>3.2&&nu<3.73&&iTgt==1 -1 281
+histogram/divide 282 281 280
+
+vector/read nsolid-Fe_2_3 ../eg2DIS_Create/MR3D/eg2DIS-solid-Fe_nu_2_q2_3.txt 0
+histogram/create 608 40 0.0 1.0
+vector/fill nsolid-Fe_2_3 ! 608
+histogram/divide 618 608 110
+
+histogram/divide 223 222 612
+histogram/graph 223 224
+graph/title 224 CLAS6:eg2 z_h R^p
+
+histogram/divide 253 252 615
+histogram/graph 253 254
+graph/title 254 CLAS6:eg2 z_h R^p
+
+histogram/divide 283 282 618
+histogram/graph 283 284
+graph/title 284 CLAS6:eg2 z_h R^p
+
+tree/file 30 /Users/wood5/jlab/clas-data/eg2/Npos/Lead/ntuples/ntuple_Pb_Npos.hipo protonTree::tree
+
+histogram/create 320 40 0.0 1.0
+tree/draw 30 zh pFidCut==1&&eFidCut==1&&q2>1.0&&q2<1.33&&nu>3.2&&nu<3.73&&iTgt==0 -1 320
+histogram/create 321 40 0.0 1.0
+tree/draw 30 zh pFidCut==1&&eFidCut==1&&q2>1.0&&q2<1.33&&nu>3.2&&nu<3.73&&iTgt==1 -1 321
+histogram/divide 322 321 320
+
+vector/read nsolid-Pb_2_1 ../eg2DIS_Create/MR3D/eg2DIS-solid-Pb_nu_2_q2_1.txt 0
+histogram/create 702 40 0.0 1.0
+vector/fill nsolid-Pb_2_1 ! 702
+histogram/divide 712 702 110
+
+histogram/create 350 40 0.0 1.0
+tree/draw 30 zh pFidCut==1&&eFidCut==1&&q2>1.33&&q2<1.76&&nu>3.2&&nu<3.73&&iTgt==0 -1 350
+histogram/create 351 40 0.0 1.0
+tree/draw 30 zh pFidCut==1&&eFidCut==1&&q2>1.33&&q2<1.76&&nu>3.2&&nu<3.73&&iTgt==1 -1 351
+histogram/divide 352 351 350
+
+vector/read nsolid-Pb_2_2 ../eg2DIS_Create/MR3D/eg2DIS-solid-Pb_nu_2_q2_2.txt 0
+histogram/create 705 40 0.0 1.0
+vector/fill nsolid-Pb_2_2 ! 705
+histogram/divide 715 705 110
+
+histogram/create 380 40 0.0 1.0
+tree/draw 30 zh pFidCut==1&&eFidCut==1&&q2>1.76&&q2<4.10&&nu>3.2&&nu<3.73&&iTgt==0 -1 380
+histogram/create 381 40 0.0 1.0
+tree/draw 30 zh pFidCut==1&&eFidCut==1&&q2>1.76&&q2<4.10&&nu>3.2&&nu<3.73&&iTgt==1 -1 381
+histogram/divide 382 381 380
+
+vector/read nsolid-Pb_2_3 ../eg2DIS_Create/MR3D/eg2DIS-solid-Pb_nu_2_q2_3.txt 0
+histogram/create 708 40 0.0 1.0
+vector/fill nsolid-Pb_2_3 ! 708
+histogram/divide 718 708 110
+
+histogram/divide 323 322 712
+histogram/graph 323 324
+graph/title 324 CLAS6:eg2 z_h R^p
+
+histogram/divide 353 352 715
+histogram/graph 353 354
+graph/title 354 CLAS6:eg2 z_h R^p
+
+histogram/divide 383 382 718
+histogram/graph 383 384
+graph/title 384 CLAS6:eg2 z_h R^p
+
+canvas/cd 0
+graph/set 124 mstyle=0
+graph/set 124 mcolor=1
+graph/set 124 msize=5
+graph/plot 124
+canvas/cd 0
+graph/set 224 mstyle=1
+graph/set 224 mcolor=2
+graph/set 224 msize=5
+graph/plot 224 same
+graph/set 324 mstyle=2
+graph/set 324 mcolor=3
+graph/set 324 msize=5
+graph/plot 324 same
+
+canvas/cd 1
+graph/set 154 mstyle=0
+graph/set 154 mcolor=1
+graph/set 154 msize=5
+graph/plot 154
+canvas/cd 1
+graph/set 254 mstyle=1
+graph/set 254 mcolor=2
+graph/set 254 msize=5
+graph/plot 254 same
+graph/set 354 mstyle=2
+graph/set 354 mcolor=3
+graph/set 354 msize=5
+graph/plot 354 same
+
+canvas/cd 2
+graph/set 184 mstyle=0
+graph/set 184 mcolor=1
+graph/set 184 msize=5
+graph/plot 184
+canvas/cd 2
+graph/set 284 mstyle=1
+graph/set 284 mcolor=2
+graph/set 284 msize=5
+graph/plot 284 same
+graph/set 384 mstyle=2
+graph/set 384 mcolor=3
+graph/set 384 msize=5
+graph/plot 384 same
+
+canvas/save eg2Proton-MR3D-zh-AllTgt_nu2.png
