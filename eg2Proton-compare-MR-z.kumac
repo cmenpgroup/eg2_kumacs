@@ -1,0 +1,35 @@
+
+
+tree/file 10 $1 protonTree::tree
+histogram/create 100 50 0.0 1.25
+tree/draw 10 $3 pFidCut==1&&eFidCut==1&&iTgt==0 -1 100
+
+histogram/create 101 50 0.0 1.25
+tree/draw 10 $3 pFidCut==1&&eFidCut==1&&iTgt==1 -1 101
+
+histogram/divide 102 101 100
+histogram/graph 102 103
+graph/title 103 eg2:C/D_2 $3 R^p
+
+tree/file 20 $2 protonTree::tree
+histogram/create 200 50 0.0 1.25
+tree/draw 20 $3 pFidCut==1&&eFidCut==1&&iTgt==0 -1 200
+
+histogram/create 201 50 0.0 1.25
+tree/draw 20 $3 pFidCut==1&&eFidCut==1&&iTgt==1 -1 201
+
+histogram/divide 202 201 200
+histogram/graph 202 203
+graph/title 203 eg2:C/D_2 $3 R^p
+
+canvas/zone 2 1
+canvas/set ts 24
+canvas/set ats 24
+canvas/set als 24
+
+canvas/cd 0
+graph/plot 103
+canvas/cd 1
+graph/plot 203
+
+canvas/save eg2Proton-compare-MR-$3.png
