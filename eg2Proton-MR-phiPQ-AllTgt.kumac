@@ -1,0 +1,78 @@
+canvas/set ts 20
+canvas/set ats 20
+canvas/set als 20
+
+tree/file 10 /Users/wood5/jlab/clas-data/eg2/Npos/Carbon/ntuples_v2/ntuple_C_Npos.hipo protonTree::tree
+histogram/create 100 60 -180.0 180.0
+tree/draw 10 phiPQ pFidCut==1&&eFidCut==1&&iTgt==0 -1 100
+histogram/create 101 60 -180.0 180.0
+tree/draw 10 phiPQ pFidCut==1&&eFidCut==1&&iTgt==1 -1 101
+histogram/divide 102 101 100
+
+vector/read nsolid-C ../eg2DIS_Create/eg2DIS-solid-C-phiPQ.txt 0
+vector/read nliquid-C ../eg2DIS_Create/eg2DIS-liquid-C-phiPQ.txt 0
+histogram/create 110 60 -180.0 180.0
+vector/fill nliquid-C ! 110
+histogram/create 111 60 -180.0 180.0
+vector/fill nsolid-C ! 111
+
+histogram/divide 112 111 110
+histogram/divide 103 102 112
+histogram/graph 103 104
+graph/title 104 CLAS6:eg2 #phi_P_Q~(deg.) R^p
+
+tree/file 20 /Users/wood5/jlab/clas-data/eg2/Npos/Iron/ntuples_v2/ntuple_Fe_Npos.hipo protonTree::tree
+histogram/create 200 60 -180.0 180.0
+tree/draw 20 phiPQ pFidCut==1&&eFidCut==1&&iTgt==0 -1 200
+histogram/create 201 60 -180.0 180.0
+tree/draw 20 phiPQ pFidCut==1&&eFidCut==1&&iTgt==1 -1 201
+histogram/divide 202 201 200
+
+vector/read nsolid-Fe ../eg2DIS_Create/eg2DIS-solid-Fe-phiPQ.txt 0
+vector/read nliquid-Fe ../eg2DIS_Create/eg2DIS-liquid-Fe-phiPQ.txt 0
+histogram/create 210 60 -180.0 180.0
+vector/fill nliquid-Fe ! 210
+histogram/create 211 60 -180.0 180.0
+vector/fill nsolid-Fe ! 211
+
+histogram/divide 212 211 210
+histogram/divide 203 202 212
+histogram/graph 203 204
+graph/title 204 CLAS6:eg2 #phi_P_Q~(deg.) R^p
+
+tree/file 30 /Users/wood5/jlab/clas-data/eg2/Npos/Lead/ntuples_v2/ntuple_Pb_Npos.hipo protonTree::tree
+histogram/create 300 60 -180.0 180.0
+tree/draw 30 phiPQ pFidCut==1&&eFidCut==1&&iTgt==0 -1 300
+histogram/create 301 60 -180.0 180.0
+tree/draw 30 phiPQ pFidCut==1&&eFidCut==1&&iTgt==1 -1 301
+histogram/divide 302 301 300
+
+vector/read nsolid-Pb ../eg2DIS_Create/eg2DIS-solid-Pb-phiPQ.txt 0
+vector/read nliquid-Pb ../eg2DIS_Create/eg2DIS-liquid-Pb-phiPQ.txt 0
+histogram/create 310 60 -180.0 180.0
+vector/fill nliquid-Pb ! 310
+histogram/create 311 60 -180.0 180.0
+vector/fill nsolid-Pb ! 311
+
+histogram/divide 312 311 310
+histogram/divide 303 302 312
+histogram/graph 303 304
+graph/title 304 CLAS6:eg2 #phi_P_Q~(deg.) R^p
+
+canvas/cd 0
+graph/set 104 mstyle=0
+graph/set 104 mcolor=1
+graph/set 104 msize=5
+graph/plot 104
+//canvas/cd 1
+graph/set 204 mstyle=1
+graph/set 204 mcolor=2
+graph/set 204 msize=5
+graph/plot 204 same
+//canvas/cd 2
+graph/set 304 mstyle=2
+graph/set 304 mcolor=3
+graph/set 304 msize=5
+graph/plot 304 same
+
+canvas/save eg2Proton-MR-phiPQ-AllTgt.png

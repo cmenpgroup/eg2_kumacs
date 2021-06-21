@@ -1,20 +1,19 @@
-//canvas/zone 3 1
 canvas/set ts 20
 canvas/set ats 20
 canvas/set als 20
 
 tree/file 10 /Users/wood5/jlab/clas-data/eg2/Npos/Carbon/ntuples/ntuple_C_Npos.hipo protonTree::tree
-histogram/create 100 40 0.0 1.0
+histogram/create 100 50 0.0 1.25
 tree/draw 10 zLC pFidCut==1&&eFidCut==1&&iTgt==0 -1 100
-histogram/create 101 40 0.0 1.0
+histogram/create 101 50 0.0 1.25
 tree/draw 10 zLC pFidCut==1&&eFidCut==1&&iTgt==1 -1 101
 histogram/divide 102 101 100
 
-vector/read nsolid-C ../eg2DIS_Create/eg2DIS-solid-C.txt 0
-vector/read nliquid-C ../eg2DIS_Create/eg2DIS-liquid-C.txt 0
-histogram/create 110 40 0.0 1.0
+vector/read nsolid-C ../eg2DIS_Create/eg2DIS-solid-C-zh1.25.txt 0
+vector/read nliquid-C ../eg2DIS_Create/eg2DIS-liquid-C-zh1.25.txt 0
+histogram/create 110 50 0.0 1.25
 vector/fill nliquid-C ! 110
-histogram/create 111 40 0.0 1.0
+histogram/create 111 50 0.0 1.25
 vector/fill nsolid-C ! 111
 
 histogram/divide 112 111 110
@@ -23,17 +22,17 @@ histogram/graph 103 104
 graph/title 104 CLAS6:eg2 z_L_C R^p
 
 tree/file 20 /Users/wood5/jlab/clas-data/eg2/Npos/Iron/ntuples/ntuple_Fe_Npos.hipo protonTree::tree
-histogram/create 200 40 0.0 1.0
+histogram/create 200 50 0.0 1.25
 tree/draw 20 zLC pFidCut==1&&eFidCut==1&&iTgt==0 -1 200
-histogram/create 201 40 0.0 1.0
+histogram/create 201 50 0.0 1.25
 tree/draw 20 zLC pFidCut==1&&eFidCut==1&&iTgt==1 -1 201
 histogram/divide 202 201 200
 
-vector/read nsolid-Fe ../eg2DIS_Create/eg2DIS-solid-Fe.txt 0
-vector/read nliquid-Fe ../eg2DIS_Create/eg2DIS-liquid-Fe.txt 0
-histogram/create 210 40 0.0 1.0
+vector/read nsolid-Fe ../eg2DIS_Create/eg2DIS-solid-Fe-zh1.25.txt 0
+vector/read nliquid-Fe ../eg2DIS_Create/eg2DIS-liquid-Fe-zh1.25.txt 0
+histogram/create 210 50 0.0 1.25
 vector/fill nliquid-Fe ! 210
-histogram/create 211 40 0.0 1.0
+histogram/create 211 50 0.0 1.25
 vector/fill nsolid-Fe ! 211
 
 histogram/divide 212 211 210
@@ -42,17 +41,17 @@ histogram/graph 203 204
 graph/title 204 CLAS6:eg2 z_L_C R^p
 
 tree/file 30 /Users/wood5/jlab/clas-data/eg2/Npos/Lead/ntuples/ntuple_Pb_Npos.hipo protonTree::tree
-histogram/create 300 40 0.0 1.0
+histogram/create 300 50 0.0 1.25
 tree/draw 30 zLC pFidCut==1&&eFidCut==1&&iTgt==0 -1 300
-histogram/create 301 40 0.0 1.0
+histogram/create 301 50 0.0 1.25
 tree/draw 30 zLC pFidCut==1&&eFidCut==1&&iTgt==1 -1 301
 histogram/divide 302 301 300
 
-vector/read nsolid-Pb ../eg2DIS_Create/eg2DIS-solid-Pb.txt 0
-vector/read nliquid-Pb ../eg2DIS_Create/eg2DIS-liquid-Pb.txt 0
-histogram/create 310 40 0.0 1.0
+vector/read nsolid-Pb ../eg2DIS_Create/eg2DIS-solid-Pb-zh1.25.txt 0
+vector/read nliquid-Pb ../eg2DIS_Create/eg2DIS-liquid-Pb-zh1.25.txt 0
+histogram/create 310 50 0.0 1.25
 vector/fill nliquid-Pb ! 310
-histogram/create 311 40 0.0 1.0
+histogram/create 311 50 0.0 1.25
 vector/fill nsolid-Pb ! 311
 
 histogram/divide 312 311 310

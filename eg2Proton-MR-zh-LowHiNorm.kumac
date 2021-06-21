@@ -22,17 +22,19 @@ histogram/divide 103 102 112
 histogram/graph 103 104
 graph/title 104 CLAS6:eg2 z_h R^p
 
-histogram/create 105 20 0.5 1.0
+histogram/create 105 30 0.5 1.25
 tree/draw 10 zh pFidCut==1&&eFidCut==1&&iTgt==0 -1 105
-histogram/create 106 20 0.5 1.0
+histogram/create 106 30 0.5 1.25
 tree/draw 10 zh pFidCut==1&&eFidCut==1&&iTgt==1 -1 106
 histogram/divide 107 106 105
 
-vector/read nsolid-C-hi ../eg2DIS_Create/eg2DIS-solid-C-hi.txt 0
-vector/read nliquid-C-hi ../eg2DIS_Create/eg2DIS-liquid-C-hi.txt 0
-histogram/create 115 20 0.5 1.0
+//vector/read nsolid-C-hi ../eg2DIS_Create/eg2DIS-solid-C-hi.txt 0
+//vector/read nliquid-C-hi ../eg2DIS_Create/eg2DIS-liquid-C-hi.txt 0
+vector/read nsolid-C-hi ../eg2DIS_Create/eg2DIS-solid-C-hi-zh1.25.txt 0
+vector/read nliquid-C-hi ../eg2DIS_Create/eg2DIS-liquid-C-hi-zh1.25.txt 0
+histogram/create 115 30 0.5 1.25
 vector/fill nliquid-C-hi ! 115
-histogram/create 116 20 0.5 1.0
+histogram/create 116 30 0.5 1.25
 vector/fill nsolid-C-hi ! 116
 
 histogram/divide 117 116 115
@@ -59,17 +61,19 @@ histogram/divide 203 202 212
 histogram/graph 203 204
 graph/title 204 CLAS6:eg2 z_h R^p
 
-histogram/create 205 20 0.5 1.0
+histogram/create 205 30 0.5 1.25
 tree/draw 20 zh pFidCut==1&&eFidCut==1&&iTgt==0 -1 205
-histogram/create 206 20 0.5 1.0
+histogram/create 206 30 0.5 1.25
 tree/draw 20 zh pFidCut==1&&eFidCut==1&&iTgt==1 -1 206
 histogram/divide 207 206 205
 
-vector/read nsolid-Fe-hi ../eg2DIS_Create/eg2DIS-solid-Fe-hi.txt 0
-vector/read nliquid-Fe-hi ../eg2DIS_Create/eg2DIS-liquid-Fe-hi.txt 0
-histogram/create 215 20 0.5 1.0
+//vector/read nsolid-Fe-hi ../eg2DIS_Create/eg2DIS-solid-Fe-hi.txt 0
+//vector/read nliquid-Fe-hi ../eg2DIS_Create/eg2DIS-liquid-Fe-hi.txt 0
+vector/read nsolid-Fe-hi ../eg2DIS_Create/eg2DIS-solid-Fe-hi-zh1.25.txt 0
+vector/read nliquid-Fe-hi ../eg2DIS_Create/eg2DIS-liquid-Fe-hi-zh1.25.txt 0
+histogram/create 215 30 0.5 1.25
 vector/fill nliquid-Fe-hi ! 215
-histogram/create 216 20 0.5 1.0
+histogram/create 216 30 0.5 1.25
 vector/fill nsolid-Fe-hi ! 216
 
 histogram/divide 217 216 215
@@ -96,17 +100,19 @@ histogram/divide 303 302 312
 histogram/graph 303 304
 graph/title 304 CLAS6:eg2 z_h R^p
 
-histogram/create 305 20 0.5 1.0
+histogram/create 305 30 0.5 1.25
 tree/draw 30 zh pFidCut==1&&eFidCut==1&&iTgt==0 -1 305
-histogram/create 306 20 0.5 1.0
+histogram/create 306 30 0.5 1.25
 tree/draw 30 zh pFidCut==1&&eFidCut==1&&iTgt==1 -1 306
 histogram/divide 307 306 305
 
-vector/read nsolid-Pb-hi ../eg2DIS_Create/eg2DIS-solid-Pb-hi.txt 0
-vector/read nliquid-Pb-hi ../eg2DIS_Create/eg2DIS-liquid-Pb-hi.txt 0
-histogram/create 315 20 0.5 1.0
+//vector/read nsolid-Pb-hi ../eg2DIS_Create/eg2DIS-solid-Pb-hi.txt 0
+//vector/read nliquid-Pb-hi ../eg2DIS_Create/eg2DIS-liquid-Pb-hi.txt 0
+vector/read nsolid-Pb-hi ../eg2DIS_Create/eg2DIS-solid-Pb-hi-zh1.25.txt 0
+vector/read nliquid-Pb-hi ../eg2DIS_Create/eg2DIS-liquid-Pb-hi-zh1.25.txt 0
+histogram/create 315 30 0.5 1.25
 vector/fill nliquid-Pb-hi ! 315
-histogram/create 316 20 0.5 1.0
+histogram/create 316 30 0.5 1.25
 vector/fill nsolid-Pb-hi ! 316
 
 histogram/divide 317 316 315
@@ -143,4 +149,4 @@ graph/set 309 mcolor=3
 graph/set 309 msize=5
 graph/plot 309 same
 
-canvas/save eg2Proton-MR-zh-LowHiNorm-AllTgt.png
+canvas/save eg2Proton-MR-zh-LowHiNorm-AllTgt-v2.png
