@@ -4,9 +4,9 @@ canvas/set als 20
 
 tree/file 10 /Users/wood5/jlab/clas-data/eg2/Npos/Carbon/ntuples_v2/ntuple_C_Npos.hipo protonTree::tree
 histogram/create 100 30 0.0 2.0
-tree/draw 10 pT2 pFidCut==1&&eFidCut==1&&iTgt==0 -1 100
+tree/draw 10 pT2 pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 100
 histogram/create 101 30 0.0 2.0
-tree/draw 10 pT2 pFidCut==1&&eFidCut==1&&iTgt==1 -1 101
+tree/draw 10 pT2 pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 101
 histogram/divide 102 101 100
 
 vector/read nsolid-C ../eg2DIS_Create/eg2DIS-solid-C-pT2.txt 0
@@ -23,9 +23,9 @@ graph/title 104 CLAS6:eg2 pT^2~(GeV^2) R^p
 
 tree/file 20 /Users/wood5/jlab/clas-data/eg2/Npos/Iron/ntuples_v2/ntuple_Fe_Npos.hipo protonTree::tree
 histogram/create 200 30 0.0 2.0
-tree/draw 20 pT2 pFidCut==1&&eFidCut==1&&iTgt==0 -1 200
+tree/draw 20 pT2 pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 200
 histogram/create 201 30 0.0 2.0
-tree/draw 20 pT2 pFidCut==1&&eFidCut==1&&iTgt==1 -1 201
+tree/draw 20 pT2 pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 201
 histogram/divide 202 201 200
 
 vector/read nsolid-Fe ../eg2DIS_Create/eg2DIS-solid-Fe-pT2.txt 0
@@ -42,9 +42,9 @@ graph/title 204 CLAS6:eg2 pT^2~(GeV^2) R^p
 
 tree/file 30 /Users/wood5/jlab/clas-data/eg2/Npos/Lead/ntuples_v2/ntuple_Pb_Npos.hipo protonTree::tree
 histogram/create 300 30 0.0 2.0
-tree/draw 30 pT2 pFidCut==1&&eFidCut==1&&iTgt==0 -1 300
+tree/draw 30 pT2 pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 300
 histogram/create 301 30 0.0 2.0
-tree/draw 30 pT2 pFidCut==1&&eFidCut==1&&iTgt==1 -1 301
+tree/draw 30 pT2 pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 301
 histogram/divide 302 301 300
 
 vector/read nsolid-Pb ../eg2DIS_Create/eg2DIS-solid-Pb-pT2.txt 0
@@ -64,12 +64,12 @@ graph/set 104 mstyle=0
 graph/set 104 mcolor=1
 graph/set 104 msize=5
 graph/plot 104
-//canvas/cd 1
+//canvas/cd 0
 graph/set 204 mstyle=1
 graph/set 204 mcolor=2
 graph/set 204 msize=5
 graph/plot 204 same
-//canvas/cd 2
+//canvas/cd 0
 graph/set 304 mstyle=2
 graph/set 304 mcolor=3
 graph/set 304 msize=5

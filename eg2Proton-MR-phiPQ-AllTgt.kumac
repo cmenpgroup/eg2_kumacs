@@ -4,9 +4,9 @@ canvas/set als 20
 
 tree/file 10 /Users/wood5/jlab/clas-data/eg2/Npos/Carbon/ntuples_v2/ntuple_C_Npos.hipo protonTree::tree
 histogram/create 100 60 -180.0 180.0
-tree/draw 10 phiPQ pFidCut==1&&eFidCut==1&&iTgt==0 -1 100
+tree/draw 10 phiPQ pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 100
 histogram/create 101 60 -180.0 180.0
-tree/draw 10 phiPQ pFidCut==1&&eFidCut==1&&iTgt==1 -1 101
+tree/draw 10 phiPQ pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 101
 histogram/divide 102 101 100
 
 vector/read nsolid-C ../eg2DIS_Create/eg2DIS-solid-C-phiPQ.txt 0
@@ -23,9 +23,9 @@ graph/title 104 CLAS6:eg2 #phi_P_Q~(deg.) R^p
 
 tree/file 20 /Users/wood5/jlab/clas-data/eg2/Npos/Iron/ntuples_v2/ntuple_Fe_Npos.hipo protonTree::tree
 histogram/create 200 60 -180.0 180.0
-tree/draw 20 phiPQ pFidCut==1&&eFidCut==1&&iTgt==0 -1 200
+tree/draw 20 phiPQ pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 200
 histogram/create 201 60 -180.0 180.0
-tree/draw 20 phiPQ pFidCut==1&&eFidCut==1&&iTgt==1 -1 201
+tree/draw 20 phiPQ pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 201
 histogram/divide 202 201 200
 
 vector/read nsolid-Fe ../eg2DIS_Create/eg2DIS-solid-Fe-phiPQ.txt 0
@@ -42,9 +42,9 @@ graph/title 204 CLAS6:eg2 #phi_P_Q~(deg.) R^p
 
 tree/file 30 /Users/wood5/jlab/clas-data/eg2/Npos/Lead/ntuples_v2/ntuple_Pb_Npos.hipo protonTree::tree
 histogram/create 300 60 -180.0 180.0
-tree/draw 30 phiPQ pFidCut==1&&eFidCut==1&&iTgt==0 -1 300
+tree/draw 30 phiPQ pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 300
 histogram/create 301 60 -180.0 180.0
-tree/draw 30 phiPQ pFidCut==1&&eFidCut==1&&iTgt==1 -1 301
+tree/draw 30 phiPQ pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 301
 histogram/divide 302 301 300
 
 vector/read nsolid-Pb ../eg2DIS_Create/eg2DIS-solid-Pb-phiPQ.txt 0

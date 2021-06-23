@@ -1,0 +1,447 @@
+canvas/zone 3 3
+canvas/set ts 20
+canvas/set ats 20
+canvas/set als 20
+
+tree/file 10 /Users/wood5/jlab/clas-data/eg2/Npos/Carbon/ntuples_v2/ntuple_C_Npos.hipo protonTree::tree
+histogram/create 100 30 0.0 2.0
+tree/draw 10 pT2 zh>0.3&&zh<0.4&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 100
+histogram/create 101 30 0.0 2.0
+tree/draw 10 pT2 zh>0.3&&zh<0.4&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 101
+histogram/divide 102 101 100
+
+histogram/create 120 30 0.0 2.0
+tree/draw 10 pT2 zh>0.4&&zh<0.5&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 120
+histogram/create 121 30 0.0 2.0
+tree/draw 10 pT2 zh>0.4&&zh<0.5&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 121
+histogram/divide 122 121 120
+
+histogram/create 130 30 0.0 2.0
+tree/draw 10 pT2 zh>0.5&&zh<0.6&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 130
+histogram/create 131 30 0.0 2.0
+tree/draw 10 pT2 zh>0.5&&zh<0.6&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 131
+histogram/divide 132 131 130
+
+histogram/create 140 30 0.0 2.0
+tree/draw 10 pT2 zh>0.6&&zh<0.7&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 140
+histogram/create 141 30 0.0 2.0
+tree/draw 10 pT2 zh>0.6&&zh<0.7&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 141
+histogram/divide 142 141 140
+
+histogram/create 150 30 0.0 2.0
+tree/draw 10 pT2 zh>0.7&&zh<0.8&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 150
+histogram/create 151 30 0.0 2.0
+tree/draw 10 pT2 zh>0.7&&zh<0.8&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 151
+histogram/divide 152 151 150
+
+histogram/create 160 30 0.0 2.0
+tree/draw 10 pT2 zh>0.8&&zh<0.9&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 160
+histogram/create 161 30 0.0 2.0
+tree/draw 10 pT2 zh>0.8&&zh<0.9&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 161
+histogram/divide 162 161 160
+
+histogram/create 170 30 0.0 2.0
+tree/draw 10 pT2 zh>0.9&&zh<1.0&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 170
+histogram/create 171 30 0.0 2.0
+tree/draw 10 pT2 zh>0.9&&zh<1.0&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 171
+histogram/divide 172 171 170
+
+histogram/create 180 30 0.0 2.0
+tree/draw 10 pT2 zh>1.0&&zh<1.1&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 180
+histogram/create 181 30 0.0 2.0
+tree/draw 10 pT2 zh>1.0&&zh<1.1&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 181
+histogram/divide 182 181 180
+
+histogram/create 190 30 0.0 2.0
+tree/draw 10 pT2 zh>1.1&&zh<1.2&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 190
+histogram/create 191 30 0.0 2.0
+tree/draw 10 pT2 zh>1.1&&zh<1.2&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 191
+histogram/divide 192 191 190
+
+vector/read nsolid-C ../eg2DIS_Create/eg2DIS-solid-C-pT2.txt 0
+vector/read nliquid-C ../eg2DIS_Create/eg2DIS-liquid-C-pT2.txt 0
+histogram/create 110 30 0.0 2.0
+vector/fill nliquid-C ! 110
+histogram/create 111 30 0.0 2.0
+vector/fill nsolid-C ! 111
+
+histogram/divide 112 111 110
+histogram/divide 103 102 112
+histogram/graph 103 104
+graph/title 104 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 123 122 112
+histogram/graph 123 124
+graph/title 124 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 133 132 112
+histogram/graph 133 134
+graph/title 134 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 143 142 112
+histogram/graph 143 144
+graph/title 144 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 153 152 112
+histogram/graph 153 154
+graph/title 154 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 163 162 112
+histogram/graph 163 164
+graph/title 164 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 173 172 112
+histogram/graph 173 174
+graph/title 174 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 183 182 112
+histogram/graph 183 184
+graph/title 184 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 193 192 112
+histogram/graph 193 194
+graph/title 194 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+tree/file 20 /Users/wood5/jlab/clas-data/eg2/Npos/Iron/ntuples_v2/ntuple_Fe_Npos.hipo protonTree::tree
+histogram/create 200 30 0.0 2.0
+tree/draw 20 pT2 zh>0.3&&zh<0.4&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 200
+histogram/create 201 30 0.0 2.0
+tree/draw 20 pT2 zh>0.3&&zh<0.4&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 201
+histogram/divide 202 201 200
+
+histogram/create 220 30 0.0 2.0
+tree/draw 20 pT2 zh>0.4&&zh<0.5&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 220
+histogram/create 221 30 0.0 2.0
+tree/draw 20 pT2 zh>0.4&&zh<0.5&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 221
+histogram/divide 222 221 220
+
+histogram/create 230 30 0.0 2.0
+tree/draw 20 pT2 zh>0.5&&zh<0.6&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 230
+histogram/create 231 30 0.0 2.0
+tree/draw 20 pT2 zh>0.5&&zh<0.6&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 231
+histogram/divide 232 231 230
+
+histogram/create 240 30 0.0 2.0
+tree/draw 20 pT2 zh>0.6&&zh<0.7&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 240
+histogram/create 241 30 0.0 2.0
+tree/draw 20 pT2 zh>0.6&&zh<0.7&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 241
+histogram/divide 242 241 240
+
+histogram/create 250 30 0.0 2.0
+tree/draw 20 pT2 zh>0.7&&zh<0.8&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 250
+histogram/create 251 30 0.0 2.0
+tree/draw 20 pT2 zh>0.7&&zh<0.8&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 251
+histogram/divide 252 251 250
+
+histogram/create 260 30 0.0 2.0
+tree/draw 20 pT2 zh>0.8&&zh<0.9&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 260
+histogram/create 261 30 0.0 2.0
+tree/draw 20 pT2 zh>0.8&&zh<0.9&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 261
+histogram/divide 262 261 260
+
+histogram/create 270 30 0.0 2.0
+tree/draw 20 pT2 zh>0.9&&zh<1.0&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 270
+histogram/create 271 30 0.0 2.0
+tree/draw 20 pT2 zh>0.9&&zh<1.0&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 271
+histogram/divide 272 271 270
+
+histogram/create 280 30 0.0 2.0
+tree/draw 20 pT2 zh>1.0&&zh<1.1&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 280
+histogram/create 281 30 0.0 2.0
+tree/draw 20 pT2 zh>1.0&&zh<1.1&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 281
+histogram/divide 282 281 280
+
+histogram/create 290 30 0.0 2.0
+tree/draw 20 pT2 zh>1.1&&zh<1.2&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 290
+histogram/create 291 30 0.0 2.0
+tree/draw 20 pT2 zh>1.1&&zh<1.2&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 291
+histogram/divide 292 291 290
+
+vector/read nsolid-Fe ../eg2DIS_Create/eg2DIS-solid-Fe-pT2.txt 0
+vector/read nliquid-Fe ../eg2DIS_Create/eg2DIS-liquid-Fe-pT2.txt 0
+histogram/create 210 30 0.0 2.0
+vector/fill nliquid-Fe ! 210
+histogram/create 211 30 0.0 2.0
+vector/fill nsolid-Fe ! 211
+
+histogram/divide 212 211 210
+histogram/divide 203 202 212
+histogram/graph 203 204
+graph/title 204 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 223 222 212
+histogram/graph 223 224
+graph/title 224 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 233 232 212
+histogram/graph 233 234
+graph/title 234 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 243 242 212
+histogram/graph 243 244
+graph/title 244 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 253 252 212
+histogram/graph 253 254
+graph/title 254 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 263 262 212
+histogram/graph 263 264
+graph/title 264 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 273 272 212
+histogram/graph 273 274
+graph/title 274 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 283 282 212
+histogram/graph 283 284
+graph/title 284 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 293 292 212
+histogram/graph 293 294
+graph/title 294 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+tree/file 30 /Users/wood5/jlab/clas-data/eg2/Npos/Lead/ntuples_v2/ntuple_Pb_Npos.hipo protonTree::tree
+histogram/create 300 30 0.0 2.0
+tree/draw 30 pT2 zh>0.3&&zh<0.4&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 300
+histogram/create 301 30 0.0 2.0
+tree/draw 30 pT2 zh>0.3&&zh<0.4&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 301
+histogram/divide 302 301 300
+
+histogram/create 320 30 0.0 2.0
+tree/draw 30 pT2 zh>0.4&&zh<0.5&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 320
+histogram/create 321 30 0.0 2.0
+tree/draw 30 pT2 zh>0.4&&zh<0.5&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 321
+histogram/divide 322 321 320
+
+histogram/create 330 30 0.0 2.0
+tree/draw 30 pT2 zh>0.5&&zh<0.6&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 330
+histogram/create 331 30 0.0 2.0
+tree/draw 30 pT2 zh>0.5&&zh<0.6&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 331
+histogram/divide 332 331 330
+
+histogram/create 340 30 0.0 2.0
+tree/draw 30 pT2 zh>0.6&&zh<0.7&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 340
+histogram/create 341 30 0.0 2.0
+tree/draw 30 pT2 zh>0.6&&zh<0.7&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 341
+histogram/divide 342 341 340
+
+histogram/create 350 30 0.0 2.0
+tree/draw 30 pT2 zh>0.7&&zh<0.8&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 350
+histogram/create 351 30 0.0 2.0
+tree/draw 30 pT2 zh>0.7&&zh<0.8&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 351
+histogram/divide 352 351 350
+
+histogram/create 360 30 0.0 2.0
+tree/draw 30 pT2 zh>0.8&&zh<0.9&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 360
+histogram/create 361 30 0.0 2.0
+tree/draw 30 pT2 zh>0.8&&zh<0.9&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 361
+histogram/divide 362 361 360
+
+histogram/create 370 30 0.0 2.0
+tree/draw 30 pT2 zh>0.9&&zh<1.0&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 370
+histogram/create 371 30 0.0 2.0
+tree/draw 30 pT2 zh>0.9&&zh<1.0&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 371
+histogram/divide 372 371 370
+
+histogram/create 380 30 0.0 2.0
+tree/draw 30 pT2 zh>1.0&&zh<1.1&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 380
+histogram/create 381 30 0.0 2.0
+tree/draw 30 pT2 zh>1.0&&zh<1.1&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 381
+histogram/divide 382 381 380
+
+histogram/create 390 30 0.0 2.0
+tree/draw 30 pT2 zh>1.1&&zh<1.2&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 390
+histogram/create 391 30 0.0 2.0
+tree/draw 30 pT2 zh>1.1&&zh<1.2&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 391
+histogram/divide 392 391 390
+
+vector/read nsolid-Pb ../eg2DIS_Create/eg2DIS-solid-Pb-pT2.txt 0
+vector/read nliquid-Pb ../eg2DIS_Create/eg2DIS-liquid-Pb-pT2.txt 0
+histogram/create 310 30 0.0 2.0
+vector/fill nliquid-Pb ! 310
+histogram/create 311 30 0.0 2.0
+vector/fill nsolid-Pb ! 311
+
+histogram/divide 312 311 310
+histogram/divide 303 302 312
+histogram/graph 303 304
+graph/title 304 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 323 322 312
+histogram/graph 323 324
+graph/title 324 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 333 332 312
+histogram/graph 333 334
+graph/title 334 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 343 342 312
+histogram/graph 343 344
+graph/title 344 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 353 352 312
+histogram/graph 353 354
+graph/title 354 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 363 362 312
+histogram/graph 363 364
+graph/title 364 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 373 372 312
+histogram/graph 373 374
+graph/title 374 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 383 382 312
+histogram/graph 383 384
+graph/title 384 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+histogram/divide 393 392 312
+histogram/graph 393 394
+graph/title 394 CLAS6:eg2 pT^2~(GeV^2) R^p
+
+canvas/cd 0
+graph/set 104 mstyle=0
+graph/set 104 mcolor=1
+graph/set 104 msize=5
+graph/plot 104
+canvas/cd 0
+graph/set 204 mstyle=1
+graph/set 204 mcolor=2
+graph/set 204 msize=5
+graph/plot 204 same
+canvas/cd 0
+graph/set 304 mstyle=2
+graph/set 304 mcolor=3
+graph/set 304 msize=5
+graph/plot 304 same
+
+canvas/cd 1
+graph/set 124 mstyle=0
+graph/set 124 mcolor=1
+graph/set 124 msize=5
+graph/plot 124
+canvas/cd 1
+graph/set 224 mstyle=1
+graph/set 224 mcolor=2
+graph/set 224 msize=5
+graph/plot 224 same
+canvas/cd 1
+graph/set 324 mstyle=2
+graph/set 324 mcolor=3
+graph/set 324 msize=5
+graph/plot 324 same
+
+canvas/cd 2
+graph/set 134 mstyle=0
+graph/set 134 mcolor=1
+graph/set 134 msize=5
+graph/plot 134
+canvas/cd 2
+graph/set 234 mstyle=1
+graph/set 234 mcolor=2
+graph/set 234 msize=5
+graph/plot 234 same
+canvas/cd 2
+graph/set 334 mstyle=2
+graph/set 334 mcolor=3
+graph/set 334 msize=5
+graph/plot 334 same
+
+canvas/cd 3
+graph/set 144 mstyle=0
+graph/set 144 mcolor=1
+graph/set 144 msize=5
+graph/plot 144
+canvas/cd 3
+graph/set 244 mstyle=1
+graph/set 244 mcolor=2
+graph/set 244 msize=5
+graph/plot 244 same
+canvas/cd 3
+graph/set 344 mstyle=2
+graph/set 344 mcolor=3
+graph/set 344 msize=5
+graph/plot 344 same
+
+canvas/cd 4
+graph/set 154 mstyle=0
+graph/set 154 mcolor=1
+graph/set 154 msize=5
+graph/plot 154
+canvas/cd 4
+graph/set 254 mstyle=1
+graph/set 254 mcolor=2
+graph/set 254 msize=5
+graph/plot 254 same
+canvas/cd 4
+graph/set 354 mstyle=2
+graph/set 354 mcolor=3
+graph/set 354 msize=5
+graph/plot 354 same
+
+canvas/cd 5
+graph/set 164 mstyle=0
+graph/set 164 mcolor=1
+graph/set 164 msize=5
+graph/plot 164
+canvas/cd 5
+graph/set 264 mstyle=1
+graph/set 264 mcolor=2
+graph/set 264 msize=5
+graph/plot 264 same
+canvas/cd 5
+graph/set 364 mstyle=2
+graph/set 364 mcolor=3
+graph/set 364 msize=5
+graph/plot 364 same
+
+canvas/cd 6
+graph/set 174 mstyle=0
+graph/set 174 mcolor=1
+graph/set 174 msize=5
+graph/plot 174
+canvas/cd 6
+graph/set 274 mstyle=1
+graph/set 274 mcolor=2
+graph/set 274 msize=5
+graph/plot 274 same
+canvas/cd 6
+graph/set 374 mstyle=2
+graph/set 374 mcolor=3
+graph/set 374 msize=5
+graph/plot 374 same
+
+canvas/cd 7
+graph/set 184 mstyle=0
+graph/set 184 mcolor=1
+graph/set 184 msize=5
+graph/plot 184
+canvas/cd 7
+graph/set 284 mstyle=1
+graph/set 284 mcolor=2
+graph/set 284 msize=5
+graph/plot 284 same
+canvas/cd 7
+graph/set 384 mstyle=2
+graph/set 384 mcolor=3
+graph/set 384 msize=5
+graph/plot 384 same
+
+canvas/cd 8
+graph/set 194 mstyle=0
+graph/set 194 mcolor=1
+graph/set 194 msize=5
+graph/plot 194
+canvas/cd 8
+graph/set 294 mstyle=1
+graph/set 294 mcolor=2
+graph/set 294 msize=5
+graph/plot 294 same
+canvas/cd 8
+graph/set 394 mstyle=2
+graph/set 394 mcolor=3
+graph/set 394 msize=5
+graph/plot 394 same
+
+canvas/save eg2Proton-MR2-pT2-AllTgt.png
