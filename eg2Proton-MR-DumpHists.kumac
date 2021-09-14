@@ -1,0 +1,8 @@
+tree/file 10 $1 protonTree::tree
+histogram/create 100 $2 $3 $4
+tree/draw 10 $5 pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 100
+histogram/dump 100
+
+histogram/create 200 $2 $3 $4
+tree/draw 10 $5 pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 200
+histogram/dump 200

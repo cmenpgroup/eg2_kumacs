@@ -1,0 +1,57 @@
+tree/file 10 $1 protonTree::tree
+
+histogram/create 100 41 0.225 1.25
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 100
+histogram/save $2
+
+histogram/create 110 41 0.225 1.25
+tree/draw 10 zh pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 110
+histogram/save $2
+
+histogram/create 200 22 0.08 0.3
+tree/draw 10 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 200
+histogram/save $2
+
+histogram/create 210 22 0.08 0.3
+tree/draw 10 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 210
+histogram/save $2
+
+histogram/create 220 16 0.3 1.02
+tree/draw 10 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 220
+histogram/save $2
+
+histogram/create 230 16 0.3 1.02
+tree/draw 10 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 230
+histogram/save $2
+
+histogram/create 300 48 1.0 3.976
+tree/draw 10 q2 pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 300
+histogram/save $2
+
+histogram/create 310 48 1.0 3.976
+tree/draw 10 q2 pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 310
+histogram/save $2
+
+histogram/create 400 50 2.2 4.2
+tree/draw 10 nu pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 400
+histogram/save $2
+
+histogram/create 410 50 2.2 4.2
+tree/draw 10 nu pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 410
+histogram/save $2
+
+histogram/create 500 30 0.0 2.0
+tree/draw 10 pT2 pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 500
+histogram/save $2
+
+histogram/create 510 30 0.0 2.0
+tree/draw 10 pT2 pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 510
+histogram/save $2
+
+histogram/create 600 60 -180.0 180.0
+tree/draw 10 phiPQ pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 600
+histogram/save $2
+
+histogram/create 610 60 -180.0 180.0
+tree/draw 10 phiPQ pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 610
+histogram/save $2

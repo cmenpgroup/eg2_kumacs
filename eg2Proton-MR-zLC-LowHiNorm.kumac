@@ -1,0 +1,146 @@
+canvas/zone 2 1
+canvas/set ts 20
+canvas/set ats 20
+canvas/set als 20
+
+tree/file 10 /Users/wood5/jlab/clas-data/eg2/Npos/Carbon/ntuples_v2/ntuple_C_Npos.hipo protonTree::tree
+  
+tree/draw 10 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 100
+histogram/create 101 30 0.0 0.3
+tree/draw 10 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 101
+histogram/divide 102 101 100
+
+vector/read nsolid-C-lo ../eg2DIS_Create/zLC/eg2DIS-solid-C-lo-zLC.txt 0
+vector/read nliquid-C-lo ../eg2DIS_Create/zLC/eg2DIS-liquid-C-lo-zLC.txt 0
+histogram/create 110 30 0.0 0.3
+vector/fill nliquid-C-lo ! 110
+histogram/create 111 30 0.0 0.3
+vector/fill nsolid-C-lo ! 111
+
+histogram/divide 112 111 110
+histogram/divide 103 102 112
+histogram/graph 103 104
+graph/title 104 CLAS6:eg2 z_L_C R^p
+
+histogram/create 105 20 0.3 1.2
+tree/draw 10 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 105
+histogram/create 106 20 0.3 1.2
+tree/draw 10 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 106
+histogram/divide 107 106 105
+
+vector/read nsolid-C-hi ../eg2DIS_Create/zLC/eg2DIS-solid-C-hi-zLC.txt 0
+vector/read nliquid-C-hi ../eg2DIS_Create/zLC/eg2DIS-liquid-C-hi-zLC.txt 0
+histogram/create 115 20 0.3 1.2
+vector/fill nliquid-C-hi ! 115
+histogram/create 116 20 0.3 1.2
+vector/fill nsolid-C-hi ! 116
+
+histogram/divide 117 116 115
+histogram/divide 108 107 117
+histogram/graph 108 109
+graph/title 109 CLAS6:eg2 z_L_C R^p
+
+tree/file 20 /Users/wood5/jlab/clas-data/eg2/Npos/Iron/ntuples_v2/ntuple_Fe_Npos.hipo protonTree::tree
+histogram/create 200 30 0.0 0.3
+tree/draw 20 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 200
+histogram/create 201 30 0.0 0.3
+tree/draw 20 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 201
+histogram/divide 202 201 200
+
+vector/read nsolid-Fe-lo ../eg2DIS_Create/zLC/eg2DIS-solid-Fe-lo-zLC.txt 0
+vector/read nliquid-Fe-lo ../eg2DIS_Create/zLC/eg2DIS-liquid-Fe-lo-zLC.txt 0
+histogram/create 210 30 0.0 0.3
+vector/fill nliquid-Fe-lo ! 210
+histogram/create 211 30 0.0 0.3
+vector/fill nsolid-Fe-lo ! 211
+
+histogram/divide 212 211 210
+histogram/divide 203 202 212
+histogram/graph 203 204
+graph/title 204 CLAS6:eg2 z_L_C R^p
+
+histogram/create 205 20 0.3 1.2
+tree/draw 20 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 205
+histogram/create 206 20 0.3 1.2
+tree/draw 20 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 206
+histogram/divide 207 206 205
+
+vector/read nsolid-Fe-hi ../eg2DIS_Create/zLC/eg2DIS-solid-Fe-hi-zLC.txt 0
+vector/read nliquid-Fe-hi ../eg2DIS_Create/zLC/eg2DIS-liquid-Fe-hi-zLC.txt 0
+histogram/create 215 20 0.3 1.2
+vector/fill nliquid-Fe-hi ! 215
+histogram/create 216 20 0.3 1.2
+vector/fill nsolid-Fe-hi ! 216
+
+histogram/divide 217 216 215
+histogram/divide 208 207 217
+histogram/graph 208 209
+graph/title 209 CLAS6:eg2 z_L_C R^p
+
+tree/file 30 /Users/wood5/jlab/clas-data/eg2/Npos/Lead/ntuples_v2/ntuple_Pb_Npos.hipo protonTree::tree
+histogram/create 300 30 0.0 0.3
+tree/draw 30 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 300
+histogram/create 301 30 0.0 0.3
+tree/draw 30 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 301
+histogram/divide 302 301 300
+
+vector/read nsolid-Pb-lo ../eg2DIS_Create/zLC/eg2DIS-solid-Pb-lo-zLC.txt 0
+vector/read nliquid-Pb-lo ../eg2DIS_Create/zLC/eg2DIS-liquid-Pb-lo-zLC.txt 0
+histogram/create 310 30 0.0 0.3
+vector/fill nliquid-Pb-lo ! 310
+histogram/create 311 30 0.0 0.3
+vector/fill nsolid-Pb-lo ! 311
+
+histogram/divide 312 311 310
+histogram/divide 303 302 312
+histogram/graph 303 304
+graph/title 304 CLAS6:eg2 z_L_C R^p
+
+histogram/create 305 20 0.3 1.2
+tree/draw 30 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 305
+histogram/create 306 20 0.3 1.2
+tree/draw 30 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 306
+histogram/divide 307 306 305
+
+vector/read nsolid-Pb-hi ../eg2DIS_Create/zLC/eg2DIS-solid-Pb-hi-zLC.txt 0
+vector/read nliquid-Pb-hi ../eg2DIS_Create/zLC/eg2DIS-liquid-Pb-hi-zLC.txt 0
+histogram/create 315 20 0.3 1.2
+vector/fill nliquid-Pb-hi ! 315
+histogram/create 316 20 0.3 1.2
+vector/fill nsolid-Pb-hi ! 316
+
+histogram/divide 317 316 315
+histogram/divide 308 307 317
+histogram/graph 308 309
+graph/title 309 CLAS6:eg2 z_L_C R^p
+
+canvas/cd 0
+graph/set 104 mstyle=0
+graph/set 104 mcolor=1
+graph/set 104 msize=5
+graph/plot 104
+canvas/cd 0
+graph/set 204 mstyle=1
+graph/set 204 mcolor=2
+graph/set 204 msize=5
+graph/plot 204 same
+graph/set 304 mstyle=2
+graph/set 304 mcolor=3
+graph/set 304 msize=5
+graph/plot 304 same
+canvas/cd 1
+graph/set 109 mstyle=0
+graph/set 109 mcolor=1
+graph/set 109 msize=5
+graph/plot 109
+canvas/cd 1
+graph/set 209 mstyle=1
+graph/set 209 mcolor=2
+graph/set 209 msize=5
+graph/plot 209 same
+graph/set 309 mstyle=2
+graph/set 309 mcolor=3
+graph/set 309 msize=5
+graph/plot 309 same
+
+canvas/save eg2Proton-MR-zLC-LowHiNorm-AllTgt.png

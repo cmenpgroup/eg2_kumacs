@@ -1,0 +1,73 @@
+tree/file 10 $1 protonTree::tree
+
+histogram/create 100 37 0.3 1.225
+tree/draw 10 zh q2>1.0&&q2<1.33&&nu>2.2&&nu<3.2&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 100
+histogram/save $2
+
+histogram/create 101 37 0.3 1.225
+tree/draw 10 zh q2>1.0&&q2<1.33&&nu>2.2&&nu<3.2&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 101
+histogram/save $2
+
+histogram/create 110 28 0.25 0.95
+tree/draw 10 zh q2>1.0&&q2<1.33&&nu>3.2&&nu<3.73&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 110
+histogram/save $2
+
+histogram/create 111 28 0.25 0.95
+tree/draw 10 zh q2>1.0&&q2<1.33&&nu>3.2&&nu<3.73&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 111
+histogram/save $2
+
+histogram/create 120 24 0.225 0.825
+tree/draw 10 zh q2>1.0&&q2<1.33&&nu>3.73&&nu<4.25&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 120
+histogram/save $2
+
+histogram/create 121 24 0.225 0.825
+tree/draw 10 zh q2>1.0&&q2<1.33&&nu>3.73&&nu<4.25&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 121
+histogram/save $2
+
+histogram/create 130 37 0.3 1.225
+tree/draw 10 zh q2>1.33&&q2<1.76&&nu>2.2&&nu<3.2&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 130
+histogram/save $2
+
+histogram/create 131 37 0.3 1.225
+tree/draw 10 zh q2>1.33&&q2<1.76&&nu>2.2&&nu<3.2&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 131
+histogram/save $2
+
+histogram/create 140 28 0.25 0.95
+tree/draw 10 zh q2>1.33&&q2<1.76&&nu>3.2&&nu<3.73&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 140
+histogram/save $2
+
+histogram/create 141 28 0.25 0.95
+tree/draw 10 zh q2>1.33&&q2<1.76&&nu>3.2&&nu<3.73&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 141
+histogram/save $2
+
+histogram/create 150 24 0.225 0.825
+tree/draw 10 zh q2>1.33&&q2<1.76&&nu>3.73&&nu<4.25&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 150
+histogram/save $2
+
+histogram/create 151 24 0.225 0.825
+tree/draw 10 zh q2>1.33&&q2<1.76&&nu>3.73&&nu<4.25&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 151
+histogram/save $2
+
+histogram/create 160 34 0.3 1.15
+tree/draw 10 zh q2>1.76&&q2<4.1&&nu>2.2&&nu<3.2&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 160
+histogram/save $2
+
+histogram/create 161 34 0.3 1.15
+tree/draw 10 zh q2>1.76&&q2<4.1&&nu>2.2&&nu<3.2&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 161
+histogram/save $2
+
+histogram/create 170 29 0.25 0.975
+tree/draw 10 zh q2>1.76&&q2<4.1&&nu>3.2&&nu<3.73&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 170
+histogram/save $2
+
+histogram/create 171 29 0.25 0.975
+tree/draw 10 zh q2>1.76&&q2<4.1&&nu>3.2&&nu<3.73&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 171
+histogram/save $2
+
+histogram/create 180 23 0.25 0.825
+tree/draw 10 zh q2>1.76&&q2<4.1&&nu>3.73&&nu<4.25&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 180
+histogram/save $2
+
+histogram/create 181 23 0.25 0.825
+tree/draw 10 zh q2>1.76&&q2<4.1&&nu>3.73&&nu<4.25&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 181
+histogram/save $2

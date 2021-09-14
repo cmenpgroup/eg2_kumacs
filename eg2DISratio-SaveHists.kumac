@@ -1,0 +1,17 @@
+tree/file 10 $1 DISTree::tree
+
+histogram/create 300 48 1.0 3.976
+tree/draw 10 q2 eFidCut==1&&eFidEC==1&&iTgt==0 -1 300
+histogram/save $2
+
+histogram/create 310 48 1.0 3.976
+tree/draw 10 q2 eFidCut==1&&eFidEC==1&&iTgt==1 -1 310
+histogram/save $2
+
+histogram/create 400 50 2.2 4.2
+tree/draw 10 nu eFidCut==1&&eFidEC==1&&iTgt==0 -1 400
+histogram/save $2
+
+histogram/create 410 50 2.2 4.2
+tree/draw 10 nu eFidCut==1&&eFidEC==1&&iTgt==1 -1 410
+histogram/save $2
