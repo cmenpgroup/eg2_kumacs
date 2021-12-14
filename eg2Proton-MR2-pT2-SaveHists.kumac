@@ -56,11 +56,11 @@ histogram/create 161 28 0.0 1.86666667
 tree/draw 10 pT2 zh>0.9&&zh<1.0&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 161
 histogram/save $2
 
-histogram/create 170 25 0.0 1.86666667
+histogram/create 170 21 0.0 1.4
 tree/draw 10 pT2 zh>1.0&&zh<1.1&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 170
 histogram/save $2
 
-histogram/create 171 25 0.0 1.86666667
+histogram/create 171 21 0.0 1.4
 tree/draw 10 pT2 zh>1.0&&zh<1.1&&pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 171
 histogram/save $2
 

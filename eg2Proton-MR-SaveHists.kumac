@@ -8,11 +8,11 @@ histogram/create 110 41 0.225 1.25
 tree/draw 10 zh pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 110
 histogram/save $2
 
-histogram/create 200 22 0.08 0.3
+histogram/create 200 17 0.13 0.3
 tree/draw 10 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 -1 200
 histogram/save $2
 
-histogram/create 210 22 0.08 0.3
+histogram/create 210 17 0.13 0.3
 tree/draw 10 zLC pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 -1 210
 histogram/save $2
 

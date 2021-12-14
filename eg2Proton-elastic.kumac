@@ -1,0 +1,97 @@
+tree/file 10 $1 protonTree::tree
+
+histogram/create 100 180 -180. 180.
+tree/draw 10 ePhi pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 $3 100
+histogram/title 100 eg2:Pb #phi~(deg.) Counts
+histogram/save $2
+
+histogram/create 110 180 -180. 180.
+tree/draw 10 ePhi pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 $3 110
+histogram/title 110 eg2:Pb #phi~(deg.) Counts
+histogram/save $2
+
+histogram/create 120 180 -180. 180.
+tree/draw 10 pPhi pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 $3 120
+histogram/title 120 eg2:Pb #phi~(deg.) Counts
+histogram/save $2
+
+histogram/create 130 180 -180. 180.
+tree/draw 10 pPhi pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 $3 130
+histogram/title 130 eg2:Pb #phi~(deg.) Counts
+histogram/save $2
+
+histogram/create 200 180 -360. 360.
+tree/draw 10 ePhi-pPhi pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 $3 200
+histogram/title 200 eg2:D2 #Delta#phi~(deg.) Counts
+histogram/save $2
+
+histogram/create 210 180 -360. 360.
+tree/draw 10 ePhi-pPhi pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 $3 210
+histogram/title 210 eg2:Pb #Delta#phi~(deg.) Counts
+histogram/save $2
+
+histogram/create 300 180 -360. 360.
+tree/draw 10 ePhi-pPhi pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0&&zLC>0.0&&zLC<0.3 $3 300
+histogram/title 300 eg2:D2 #Delta#phi~(deg.) Counts
+histogram/save $2
+
+histogram/create 310 180 -360. 360.
+tree/draw 10 ePhi-pPhi pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0&&zLC>0.3&&zLC<0.6 $3 310
+histogram/title 310 eg2:D2 #Delta#phi~(deg.) Counts
+histogram/save $2
+
+histogram/create 320 180 -360. 360.
+tree/draw 10 ePhi-pPhi pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0&&zLC>0.6&&zLC<0.9 $3 320
+histogram/title 320 eg2:D2 #Delta#phi~(deg.) Counts
+histogram/save $2
+
+histogram/create 330 180 -360. 360.
+tree/draw 10 ePhi-pPhi pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0&&zLC>0.9 $3 330
+histogram/title 330 eg2:D2 #Delta#phi~(deg.) Counts
+histogram/save $2
+
+histogram/create 400 180 -360. 360.
+tree/draw 10 ePhi-pPhi pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1&&zLC>0.0&&zLC<0.3 $3 400
+histogram/title 400 eg2:Pb #Delta#phi~(deg.) Counts
+histogram/save $2
+
+histogram/create 410 180 -360. 360.
+tree/draw 10 ePhi-pPhi pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1&&zLC>0.3&&zLC<0.6 $3 410
+histogram/title 410 eg2:Pb #Delta#phi~(deg.) Counts
+histogram/save $2
+
+histogram/create 420 180 -360. 360.
+tree/draw 10 ePhi-pPhi pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1&&zLC>0.6&&zLC<0.9 $3 420
+histogram/title 420 eg2:Pb #Delta#phi~(deg.) Counts
+histogram/save $2
+
+histogram/create 430 180 -360. 360.
+tree/draw 10 ePhi-pPhi pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1&&zLC>0.9 $3 430
+histogram/title 430 eg2:Pb #Delta#phi~(deg.) Counts
+histogram/save $2
+
+canvas/zone 5 2
+canvas/set ts 24
+canvas/set ats 24
+canvas/set als 24
+
+canvas/cd 0
+histogram/plot 200
+canvas/cd 1
+histogram/plot 300
+canvas/cd 2
+histogram/plot 310
+canvas/cd 3
+histogram/plot 320
+canvas/cd 4
+histogram/plot 330
+canvas/cd 5
+histogram/plot 210
+canvas/cd 6
+histogram/plot 400
+canvas/cd 7
+histogram/plot 410
+canvas/cd 8
+histogram/plot 420
+canvas/cd 9
+histogram/plot 430
