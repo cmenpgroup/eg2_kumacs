@@ -1,0 +1,55 @@
+tree/file 10 $1 protonTree::tree
+
+histogram/create 600 150 -3. 3.
+tree/draw 10 Mx pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 $3 600
+histogram/title 600 eg2:Pb M_x~(GeV) Counts
+histogram/save $2
+
+histogram/create 610 150 -3. 3.
+tree/draw 10 Mx pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 $3 610
+histogram/title 610 eg2:Pb M_x~(GeV) Counts
+histogram/save $2
+
+histogram/create 620 150 -4. 3.
+tree/draw 10 Mx2 pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 $3 620
+histogram/title 620 eg2:Pb MM^2~(GeV^2) Counts
+histogram/save $2
+
+histogram/create 630 150 -4. 3.
+tree/draw 10 Mx2 pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 $3 630
+histogram/title 630 eg2:Pb MM^2~(GeV^2) Counts
+histogram/save $2
+
+histogram/create 700 400 0. 4.
+tree/draw 10 MxNuclei pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==0 $3 700
+histogram/title 700 eg2:Pb M_x~(GeV) Counts
+histogram/save $2
+
+histogram/create 710 500 190. 198.
+tree/draw 10 MxNuclei pFidCut==1&&eFidCut==1&&eFidEC==1&&iTgt==1 $3 710
+histogram/title 710 eg2:Pb M_x~(GeV) Counts
+histogram/save $2
+
+canvas/zone 2 2
+canvas/set ts 24
+canvas/set ats 24
+canvas/set als 24
+
+canvas/cd 0
+histogram/set 600 lc 1
+histogram/plot 600
+canvas/cd 0
+histogram/set 610 lc 2
+histogram/plot 610 same
+canvas/cd 1
+histogram/set 620 lc 1
+histogram/plot 620
+canvas/cd 1
+histogram/set 630 lc 2
+histogram/plot 630 same
+canvas/cd 2
+histogram/set 700 lc 1
+histogram/plot 700
+canvas/cd 3
+histogram/set 710 lc 2
+histogram/plot 710
